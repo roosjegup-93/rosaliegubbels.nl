@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K93T27LK3V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K93T27LK3V');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rosalie Gubbels Creative Design</title>
+<meta name="description" content="Rosalie Gubbels, creative designer uit Amsterdam. Branding, campagnes, editorial, events en webdesign.">
+<link rel="icon" href="https://www.rosaliegubbels.nl/wp-content/uploads/2021/02/cropped-logo-favicon-portfolio2-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<style>
+/* Layout: wide editorial grid, square 3-up work tiles, quiet chrome so the work carries the colour */
+:root{
+  --bg:#ffffff;
+  --bg-soft:#f3f3f1;
+  --ink:#151515;
+  --muted:#6d6d69;
+  --line:#e4e4e0;
+  --accent:#2f43e8;
+  --header:#ffffff;
+  --header-hover:#ffffff;
+  --header-ink:#151515;
+  --font-display:"Karla", "Helvetica Neue", Arial, sans-serif;
+  --font-body:"Karla", "Helvetica Neue", Arial, sans-serif;
+  --max:1360px;
+  --gutter:clamp(16px, 4vw, 48px);
+  --gap:clamp(32px, 4vw, 56px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--font-body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(var(--gutter), env(safe-area-inset-left,0px));padding-right:max(var(--gutter), env(safe-area-inset-right,0px))}
+
+/* Header */
+/* Header keeps its pastel colours in both themes, so its text is always dark */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;border-bottom:1px solid var(--line);background:var(--header);color:var(--header-ink);transition:background-color 1.8s ease}
+header.site:hover{background:var(--header-hover)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--header);transition:background-color 1.8s ease}
+/* The coloured top: header plus the opening block of each page, one surface that changes colour together */
+.band{background:var(--header);transition:background-color 1.8s ease;
+  --ink:#151515;--muted:rgba(21,21,21,.68);--line:rgba(21,21,21,.18);--bg-soft:rgba(255,255,255,.55);--accent:#2f43e8;--bg:#ffffff;color:var(--ink)}
+body:has(header.site:hover, .view:not([hidden]) .band:hover) :is(header.site, .view:not([hidden]) .band){background:var(--header-hover)}
+body:has(header.site:hover, .view:not([hidden]) .band:hover)::before{background:var(--header-hover)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px 24px;padding-block:24px;flex-wrap:wrap}
+.logo{font:700 20px/1 var(--font-display);letter-spacing:-.01em;text-decoration:none}
+.logo span{color:rgba(21,21,21,.6);font-weight:400}
+@media (max-width:520px){.logo span{display:none}}
+.right{display:flex;align-items:center;gap:clamp(14px,2.4vw,32px);flex-wrap:wrap}
+nav.main{display:flex;gap:clamp(14px,2.4vw,32px);flex-wrap:wrap}
+nav.main a{font-size:clamp(17px,1.5vw,19px);font-weight:500;text-decoration:none;color:rgba(21,21,21,.68);transition:color .15s}
+nav.main a:hover,nav.main a[aria-current="page"]{color:var(--header-ink)}
+nav.main a[aria-current="page"]{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1.5px}
+.lang{display:flex;border:1px solid rgba(21,21,21,.25);border-radius:999px;padding:2px}
+.lang button{font:600 13px/1 var(--font-body);letter-spacing:.06em;border:0;background:none;color:rgba(21,21,21,.68);padding:7px 10px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--header-ink);color:#fff}
+
+/* Views */
+.view[hidden]{display:none!important}
+main{min-height:70vh}
+
+/* Hero */
+.hero{padding-block:clamp(56px,10vw,140px) clamp(64px,9vw,128px)}
+.hero h1{font:600 clamp(36px,6.4vw,88px)/1.02 var(--font-display);letter-spacing:-.03em;margin:0;max-width:17ch;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px;margin-top:clamp(28px,4vw,48px)}
+.hero p{margin:0;max-width:56ch;color:var(--muted);font-size:clamp(16px,1.5vw,19px)}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:20px 34px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600;font-size:clamp(17px,1.5vw,19px);border:0;cursor:pointer;transition:transform .15s, background .15s}
+.btn:hover{transform:translateY(-1px);background:var(--accent);color:#fff}
+.btn svg{width:18px;height:18px}
+
+/* Filters */
+.work-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:20px 40px;padding-block:var(--gap);border-top:1px solid var(--line)}
+.work-head h2{font:600 15px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;margin:0}
+.work-head h2 small{color:var(--muted);font-weight:500;margin-left:6px;letter-spacing:0}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 14px/1 var(--font-body);padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:all .15s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* Grid */
+/* Justified rows: tiles in a row share one image height, widths follow each image's proportions */
+.grid{display:flex;flex-direction:column;gap:var(--gap);padding-bottom:clamp(88px,10vw,160px)}
+.row{display:flex;gap:var(--gap);align-items:flex-start}
+.tile{text-decoration:none;display:flex;flex-direction:column;gap:16px;min-width:0}
+.tile[hidden]{display:none}
+.frames{position:relative;max-width:100%;overflow:hidden;background:#fff}
+/* Hairline drawn on top of the image, so every tile gets the same crisp edge without changing its size */
+.frames::after{content:"";position:absolute;inset:0;border:1px solid rgba(21,21,21,.12);pointer-events:none;z-index:1}
+/* Soft crossfade with a slow drift, so the frames blend instead of flicking */
+.frames img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease-in-out}
+.frames img.on{opacity:1}
+.frames .count{position:absolute;right:10px;bottom:10px;display:flex;gap:4px}
+.frames .count i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);box-shadow:0 0 0 1px rgba(0,0,0,.08);transition:background .6s}
+.frames .count i.on{background:#fff}
+.tile-meta{display:flex;flex-direction:column;gap:10px}
+.tile-h{font:600 19px/1.25 var(--font-display);letter-spacing:-.01em;margin:0;transition:color .15s}
+.tile:hover .tile-h{color:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font:500 12px/1 var(--font-body);letter-spacing:.04em;text-transform:uppercase;padding:6px 9px;border-radius:999px;background:var(--bg-soft);color:var(--muted)}
+
+/* Project page */
+.p-head{padding-block:clamp(48px,7vw,100px) clamp(56px,7vw,100px)}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:15px;color:var(--muted);text-decoration:none;margin-bottom:clamp(24px,4vw,40px)}
+.back:hover{color:var(--ink)}
+.p-head h1{font:600 clamp(34px,5.6vw,76px)/1.03 var(--font-display);letter-spacing:-.03em;margin:0 0 clamp(28px,4vw,48px);text-wrap:balance;max-width:20ch}
+.p-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(32px,6vw,104px);border-top:1px solid var(--line);padding-top:36px}
+@media (max-width:760px){.p-intro{grid-template-columns:1fr}}
+.facts{display:grid;gap:24px;margin:0;align-content:start}
+.facts dt{font:600 12px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.facts dd{margin:0;font-size:16px}
+.p-text{min-width:0}
+.p-text p{margin:0 0 1em;max-width:62ch;font-size:clamp(17px,1.45vw,20px);line-height:1.6}
+.p-text a.ext{display:inline-flex;gap:8px;align-items:center;font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:2px}
+.gallery{display:flex;flex-direction:column;gap:var(--gap);padding-block:0 clamp(56px,7vw,104px)}
+.grow{display:flex;gap:var(--gap);align-items:flex-start}
+.gallery figure{margin:0;min-width:0;cursor:zoom-in}
+/* the hairline sits on the image itself, so there are never empty boxes around it */
+.gallery img{width:100%;height:auto;outline:1px solid rgba(21,21,21,.12);outline-offset:-1px}
+.gallery .caption{font:600 clamp(18px,1.6vw,22px)/1.25 var(--font-display);letter-spacing:-.01em;margin:var(--gap) 0 calc(var(--gap) * -.5)}
+.gallery .caption:first-child{margin-top:0}
+.p-next{border-top:1px solid var(--line);padding-block:clamp(32px,5vw,64px) clamp(56px,7vw,100px);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.p-next a{text-decoration:none;display:flex;flex-direction:column;gap:6px;max-width:48%}
+.p-next a:last-child{text-align:right;margin-left:auto}
+.p-next small{font:600 12px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.p-next b{font:600 clamp(20px,2.4vw,32px)/1.15 var(--font-display);letter-spacing:-.02em}
+.p-next a:hover b{color:var(--accent)}
+@media (max-width:560px){.p-next a{max-width:100%}.p-next a:last-child{text-align:left;margin-left:0}}
+
+/* Simple pages */
+.page{padding-block:clamp(56px,8vw,120px)}
+.page-body{padding-block:0 clamp(88px,10vw,160px)}
+.page h1{font:600 clamp(36px,6vw,80px)/1.03 var(--font-display);letter-spacing:-.03em;margin:0 0 clamp(28px,4vw,52px);max-width:18ch;text-wrap:balance}
+.lead{font-size:clamp(18px,1.8vw,23px);line-height:1.6;max-width:58ch;margin:0 0 1.1em}
+.lead:last-child{margin-bottom:0}
+.two{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+.two > *{min-width:0}
+.cv{margin:0;max-width:820px;border:1px solid var(--line);border-radius:4px;overflow:hidden;cursor:zoom-in}
+.sub-link{margin:var(--gap) 0 0;font-weight:600}
+.sub-link a{text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:2px}
+/* About has a small dropdown with Photography */
+.has-sub{position:relative}
+.sub{position:absolute;left:-14px;top:100%;padding:12px 14px 10px;background:var(--bg);border:1px solid var(--line);white-space:nowrap;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .2s,transform .2s,visibility .2s}
+.has-sub:hover .sub,.has-sub:focus-within .sub{opacity:1;visibility:visible;transform:none}
+.sub a{font-size:.9em}
+@media (max-width:560px){.sub{display:none}}
+.photos{columns:3 260px;column-gap:var(--gap)}
+.photos figure{margin:0 0 var(--gap);break-inside:avoid;cursor:zoom-in;background:var(--bg-soft);border-radius:4px;overflow:hidden}
+/* Contact fits on one screen: header and footer stay in view, content centred in between */
+main:has(> #view-contact:not([hidden])){min-height:0}
+#view-contact:not([hidden]){display:flex;flex-direction:column;justify-content:center;min-height:calc(100svh - var(--hdr, 90px) - var(--ftr, 100px))}
+.contact-wrap{width:100%;padding-block:clamp(24px,4vh,48px)}
+.contact-wrap h1{font:600 clamp(34px,5vw,64px)/1.05 var(--font-display);letter-spacing:-.03em;margin:0 0 clamp(14px,2.4vh,24px)}
+.contact-wrap .lead{margin-bottom:clamp(28px,5vh,56px)}
+.contact-list{display:grid;grid-template-columns:repeat(3,max-content);gap:24px clamp(32px,5vw,80px);margin:0;padding-top:clamp(20px,3.5vh,36px);border-top:1px solid var(--line)}
+@media (max-width:760px){.contact-list{grid-template-columns:1fr;gap:18px}}
+.contact-list dt{font:600 12px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.contact-list dd{margin:0;font:600 clamp(18px,1.8vw,24px)/1.25 var(--font-display);letter-spacing:-.01em;overflow-wrap:anywhere}
+.contact-list dd a{text-decoration:none;background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 2px no-repeat;transition:background-size .3s}
+.contact-list dd a:hover{background-size:100% 2px}
+
+/* Footer */
+footer.site{border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;padding-block:40px;color:var(--muted);font-size:14px}
+footer a{text-decoration:none}
+.foot-nav{display:flex;gap:24px;flex-wrap:wrap}
+.foot-nav a{color:var(--muted)}
+.foot-nav a:hover{color:var(--ink)}
+/* Services page */
+.sec-h{font:600 15px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;margin:0 0 var(--gap);padding-top:var(--gap);border-top:1px solid var(--line)}
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-bottom:calc(var(--gap) * 2)}
+@media (max-width:960px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.services{grid-template-columns:1fr}}
+.service{min-width:0}
+.service h3,.steps h3{font:600 clamp(20px,1.9vw,24px)/1.25 var(--font-display);letter-spacing:-.01em;margin:0 0 10px}
+.service p,.steps p{margin:0;color:var(--muted);max-width:42ch}
+.service .ex{margin-top:14px;font-size:15px}
+.service .ex span{color:var(--ink);font-weight:600}
+.service .ex a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+.service .ex a:hover{text-decoration-color:var(--accent);color:var(--accent)}
+.steps{list-style:none;counter-reset:step;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap);margin:0 0 calc(var(--gap) * 2)}
+@media (max-width:960px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:step;min-width:0}
+.steps li::before{content:counter(step, decimal-leading-zero);display:block;font:600 14px/1 var(--font-body);color:var(--accent);margin-bottom:14px;font-variant-numeric:tabular-nums}
+.cta-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 40px;border-top:1px solid var(--line);padding-top:var(--gap)}
+.cta-band h2{font:600 clamp(26px,3.4vw,44px)/1.1 var(--font-display);letter-spacing:-.02em;margin:0 0 8px}
+.cta-band p{margin:0;color:var(--muted)}
+footer a:hover{color:var(--ink)}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,10,10,.94);display:flex;align-items:center;justify-content:center;padding:56px max(48px, env(safe-area-inset-right,0px)) 56px max(48px, env(safe-area-inset-left,0px))}
+.lb[hidden]{display:none}
+.lb img{max-height:100%;max-width:100%;object-fit:contain}
+.lb button{position:absolute;background:none;border:0;color:#fff;cursor:pointer;padding:12px;font:500 15px var(--font-body);opacity:.8}
+.lb button:hover{opacity:1}
+.lb button[hidden]{display:none}
+.lb .x{top:calc(8px + env(safe-area-inset-top,0px));right:calc(8px + env(safe-area-inset-right,0px))}
+.lb .pv{left:calc(4px + env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
+.lb .nx{right:calc(4px + env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
+.lb .pv svg,.lb .nx svg{width:28px;height:28px}
+.lb .ct{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#bbb;font-size:13px;font-variant-numeric:tabular-nums}
+
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+/* Phone: everything centred */
+@media (max-width:560px){
+  .bar,.right{justify-content:center;text-align:center}
+  .bar{flex-direction:column;gap:14px}
+  .hero,.page,.p-head,.page-body,.p-text,.facts,.contact-list,.contact-wrap{text-align:center}
+  .contact-wrap .lead{margin-left:auto;margin-right:auto}
+  .contact-wrap{padding-block:8px}
+  .contact-wrap h1{font-size:30px}
+  .contact-wrap .lead{font-size:16px;margin-bottom:22px}
+  .contact-list{gap:14px;padding-top:18px}
+  .contact-list dd{font-size:18px}
+  footer .wrap{padding-block:20px;gap:8px}
+  .hero h1,.page h1,.p-head h1,.lead,.hero p,.p-text p{margin-left:auto;margin-right:auto}
+  .hero-sub{flex-direction:column;align-items:center}
+  .work-head{flex-direction:column;align-items:center;text-align:center}
+  .filters,.tags,nav.main{justify-content:center}
+  .tile-meta{align-items:center;text-align:center}
+  .facts dd.tags{justify-content:center}
+  .p-next{flex-direction:column;align-items:center;text-align:center}
+  .p-next a,.p-next a:last-child{max-width:100%;text-align:center;margin:0}
+  .cv{margin:0 auto}
+  .gallery .caption{text-align:center}
+  .service,.steps li,.sec-h{text-align:center}
+  .service p,.steps p{margin-left:auto;margin-right:auto}
+  .cta-band{flex-direction:column;text-align:center}
+  .foot-nav{justify-content:center}
+  footer .wrap{flex-direction:column;align-items:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#" data-go="">Rosalie Gubbels <span>Creative Design</span></a>
+    <div class="right">
+      <nav class="main" id="nav" aria-label="Menu"></nav>
+      <div class="lang" role="group" aria-label="Taal / Language">
+        <button type="button" data-lang="nl">NL</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="view" id="view-work"></section>
+  <article class="view" id="view-project" hidden></article>
+  <section class="view" id="view-photography" hidden></section>
+  <section class="view" id="view-about" hidden></section>
+  <section class="view" id="view-cv" hidden></section>
+  <section class="view" id="view-services" hidden></section>
+  <section class="view" id="view-contact" hidden></section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© <span id="yr"></span> Rosalie Gubbels Creative Design</span>
+    <nav class="foot-nav" id="footnav" aria-label="Footer"></nav>
+    <span>rosaliegubbels@gmail.com</span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true">
+  <button class="x" id="lbx" type="button"></button>
+  <button class="pv" id="lbp" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <img id="lbi" alt="">
+  <button class="nx" id="lbn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="ct" id="lbc"></div>
+</div>
+
+<script>
+const U = "https://www.rosaliegubbels.nl/wp-content/uploads/";
+const SH = "Scherm%C2%ADafbeelding-"; // macOS screenshot prefix with soft hyphen
+// Local, web-optimised copies of the images (originals: wp-content/uploads/<path>)
+const IMG = {"2019/07/33306847_1829069390447122_4011679310514487296_n-683x1024.jpg": "images/33306847-1829069390447122-4011679310514487296-n.webp", "2019/07/66697903_1599172546879313_8428388983527964672_n-682x1024.jpg": "images/66697903-1599172546879313-8428388983527964672-n.webp", "2019/07/IMG_7043-copykopie.jpg": "images/img-7043-copykopie.webp", "2019/07/IMG_7122212-683x1024.jpg": "images/img-7122212.webp", "2019/07/IMG_7245-bw-1-683x1024.jpg": "images/img-7245-bw-1.webp", "2019/07/IMG_7250-bw-683x1024.jpg": "images/img-7250-bw.webp", "2019/07/brief-belasting-672x1024.jpg": "images/brief-belasting.webp", "2021/01/201217_1_Kerst_instaslider_RG-768x768.png": "images/201217-1-kerst-instaslider-rg.webp", "2021/01/201217_2_Kerst_instaslider_RGT-768x768.png": "images/201217-2-kerst-instaslider-rgt.webp", "2021/01/201217_3_instaslider_RG-768x768.png": "images/201217-3-instaslider-rg.webp", "2021/01/201217_4_instaslider_RG-768x768.png": "images/201217-4-instaslider-rg.webp", "2021/01/201217_5_instaslider_RG-768x769.png": "images/201217-5-instaslider-rg.webp", "2021/01/201217_6_instaslider_RG-768x768.png": "images/201217-6-instaslider-rg.webp", "2021/01/201217_7_instaslider_RG-1-768x768.png": "images/201217-7-instaslider-rg-1.webp", "2021/01/Reeks_stapel_54321.png": "images/reeks-stapel-54321.webp", "2021/01/Schermafbeelding-2021-01-07-om-12.44.42.png": "images/schermafbeelding-2021-01-07-om-12-44-42.webp", "2021/01/Schermafbeelding-2021-01-07-om-12.53.10.png": "images/schermafbeelding-2021-01-07-om-12-53-10.webp", "2021/01/Schermafbeelding-2021-01-07-om-12.53.25.png": "images/schermafbeelding-2021-01-07-om-12-53-25.webp", "2021/01/Schermafbeelding-2021-01-07-om-12.53.33.png": "images/schermafbeelding-2021-01-07-om-12-53-33.webp", "2021/01/Schermafbeelding-2021-01-07-om-13.11.31.png": "images/schermafbeelding-2021-01-07-om-13-11-31.webp", "2021/01/Schermafbeelding-2021-01-20-om-18.55.58.png": "images/schermafbeelding-2021-01-20-om-18-55-58.webp", "2021/01/Schermafbeelding-2021-01-20-om-19.01.03.png": "images/schermafbeelding-2021-01-20-om-19-01-03.webp", "2021/01/Schermafbeelding-2021-01-20-om-19.03.10.png": "images/schermafbeelding-2021-01-20-om-19-03-10.webp", "2021/01/compendium-boeken-2.png": "images/compendium-boeken-2.webp", "2021/01/compendium-boeken22.png": "images/compendium-boeken22.webp", "2021/01/flyer-mijnReade.png": "images/flyer-mijnreade.webp", "2021/01/folder-mijnReade.png": "images/folder-mijnreade.webp", "2021/01/illustratie-mijnReade-Hersteld-05.jpg": "images/illustratie-mijnreade-hersteld-05.webp", "2021/01/poster-groot.png": "images/poster-groot.webp", "2021/01/postertje1.png": "images/postertje1.webp", "2021/01/postertje2.png": "images/postertje2.webp", "2021/01/postertje3.png": "images/postertje3.webp", "2021/01/sporten-1-768x768.png": "images/sporten-1.webp", "2021/01/sporten-2-768x768.png": "images/sporten-2.webp", "2021/01/sporten-3-768x768.png": "images/sporten-3.webp", "2021/01/sporten-5-768x768.png": "images/sporten-5.webp", "2021/01/sporten-6-768x768.png": "images/sporten-6.webp", "2021/02/IMG_9481-scaled.jpg": "images/img-9481-scaled.webp", "2021/02/IMG_9485-scaled.jpg": "images/img-9485-scaled.webp", "2021/02/IMG_9504-scaled.jpg": "images/img-9504-scaled.webp", "2021/02/Medium-Coachfinder-Home-1-scaled.jpg": "images/medium-coachfinder-home-1-scaled.webp", "2021/02/Medium-Overzicht-coaches-1.png": "images/medium-overzicht-coaches-1.webp", "2021/02/Schermafbeelding-2021-02-01-om-12.57.42.png": "images/schermafbeelding-2021-02-01-om-12-57-42.webp", "2021/02/Schermafbeelding-2021-02-01-om-12.58.16.png": "images/schermafbeelding-2021-02-01-om-12-58-16.webp", "2021/02/Schermafbeelding-2021-02-01-om-12.58.27.png": "images/schermafbeelding-2021-02-01-om-12-58-27.webp", "2021/02/Schermafbeelding-2021-02-28-om-13.42.26.png": "images/schermafbeelding-2021-02-28-om-13-42-26.webp", "2021/02/xLarge-Overzicht-coaches-met-filters-hover.png": "images/xlarge-overzicht-coaches-met-filters-hover.webp", "2021/02/xSmall-Coachfinder-Home-1.png": "images/xsmall-coachfinder-home-1.webp", "2021/02/xSmall-Overzicht-coaches-1.png": "images/xsmall-overzicht-coaches-1.webp", "2022/10/Schermafbeelding-2022-10-05-om-13.14.40.png": "images/schermafbeelding-2022-10-05-om-13-14-40.webp", "2022/10/Schermafbeelding-2022-10-13-om-14.16.48.png": "images/schermafbeelding-2022-10-13-om-14-16-48.webp", "2022/10/Schermafbeelding-2022-10-13-om-14.16.59.png": "images/schermafbeelding-2022-10-13-om-14-16-59.webp", "2022/10/Schermafbeelding-2022-10-13-om-14.17.23.png": "images/schermafbeelding-2022-10-13-om-14-17-23.webp", "2022/10/Schermafbeelding-2022-10-13-om-14.17.35.png": "images/schermafbeelding-2022-10-13-om-14-17-35.webp", "2022/10/Schermafbeelding-2022-10-13-om-14.17.45.png": "images/schermafbeelding-2022-10-13-om-14-17-45.webp", "2022/10/Schermafbeelding-2022-10-13-om-14.18.10.png": "images/schermafbeelding-2022-10-13-om-14-18-10.webp", "2022/10/Schermafbeelding-2022-10-13-om-14.18.21.png": "images/schermafbeelding-2022-10-13-om-14-18-21.webp", "2022/10/Schermafbeelding-2022-10-13-om-14.18.32.png": "images/schermafbeelding-2022-10-13-om-14-18-32.webp", "2022/10/Schermafbeelding-2022-10-13-om-14.18.43.png": "images/schermafbeelding-2022-10-13-om-14-18-43.webp", "2022/10/Tekengebied-1-kopie-13.png": "images/tekengebied-1-kopie-13.webp", "2022/10/Tekengebied-1-kopie-18.png": "images/tekengebied-1-kopie-18.webp", "2022/10/Tekengebied-1-kopie-19.png": "images/tekengebied-1-kopie-19.webp", "2022/10/Tekengebied-1-kopie-20.png": "images/tekengebied-1-kopie-20.webp", "2022/10/Toasty-achter-bar-e1664969001961-1024x709.png": "images/toasty-achter-bar-e1664969001961.webp", "2022/10/huisstijl-Toasty-1_Tekengebied-1-scaled.jpg": "images/huisstijl-toasty-1-tekengebied-1-scaled.webp", "2023/11/LucasKemper_BKB_Forum_Wetenschap_LR-150.jpg": "images/lucaskemper-bkb-forum-wetenschap-lr-150.webp", "2023/11/LucasKemper_BKB_Forum_Wetenschap_LR-153.jpg": "images/lucaskemper-bkb-forum-wetenschap-lr-153.webp", "2023/11/LucasKemper_BKB_Forum_Wetenschap_LR-27.jpg": "images/lucaskemper-bkb-forum-wetenschap-lr-27.webp", "2023/11/Scherm%C2%ADafbeelding-2023-11-07-om-15.29.53.png": "images/schermafbeelding-2023-11-07-om-15-29-53.webp", "2023/11/Scherm%C2%ADafbeelding-2023-11-07-om-15.30.06.png": "images/schermafbeelding-2023-11-07-om-15-30-06.webp", "2023/11/Scherm%C2%ADafbeelding-2023-11-07-om-15.30.25.png": "images/schermafbeelding-2023-11-07-om-15-30-25.webp", "2023/11/Scherm%C2%ADafbeelding-2023-11-07-om-15.31.08.png": "images/schermafbeelding-2023-11-07-om-15-31-08.webp", "2023/11/Tekengebied-1@2x.png": "images/tekengebied-1-2x.webp", "2023/11/logos-1.jpg": "images/logos-1.webp", "2023/11/preview-scaled.jpg": "images/preview-scaled.webp", "2025/01/Tekengebied-1-kopie-1.png": "images/tekengebied-1-kopie-1.webp", "2025/01/Tekengebied-42-1.png": "images/tekengebied-42-1.webp", "2025/01/Tekengebied-42-kopie-1.png": "images/tekengebied-42-kopie-1.webp", "2025/01/Tekengebied-42-kopie-2-1.png": "images/tekengebied-42-kopie-2-1.webp", "2025/01/Tekengebied-42-kopie-3-1.png": "images/tekengebied-42-kopie-3-1.webp", "2025/01/Tekengebied-42-kopie-4-1.png": "images/tekengebied-42-kopie-4-1.webp", "2025/01/Tekengebied-42-kopie-5-1.png": "images/tekengebied-42-kopie-5-1.webp", "2025/01/Tekengebied-42-kopie-6-1.png": "images/tekengebied-42-kopie-6-1.webp", "2025/03/SLO-NOT-2025-14.jpg": "images/slo-not-2025-14.webp", "2025/03/SLO-NOT-2025-2.jpg": "images/slo-not-2025-2.webp", "2025/03/SLO-NOT-2025-3.jpg": "images/slo-not-2025-3.webp", "2025/03/SLO-NOT-2025-4.jpg": "images/slo-not-2025-4.webp", "2025/03/SLO-NOT-2025-5.jpg": "images/slo-not-2025-5.webp", "2025/03/SLO24-rep-12-1.jpg": "images/slo24-rep-12-1.webp", "2025/03/SLO24-rep-59.jpg": "images/slo24-rep-59.webp", "2025/03/SLO24-rep-62-1.jpg": "images/slo24-rep-62-1.webp", "2025/03/Scherm%C2%ADafbeelding-2025-03-24-om-14.57.49.png": "images/schermafbeelding-2025-03-24-om-14-57-49.webp", "2025/03/Scherm%C2%ADafbeelding-2025-03-24-om-14.58.07.png": "images/schermafbeelding-2025-03-24-om-14-58-07.webp", "2025/03/plenair_preview-1.jpg": "images/plenair-preview-1.webp", "2025/03/plenair_preview-20.jpg": "images/plenair-preview-20.webp", "2025/04/Tekengebied-1-kopie-2.png": "images/tekengebied-1-kopie-2.webp", "2025/04/Tekengebied-1.png": "images/tekengebied-1.webp", "2025/04/achtergrond.png": "images/achtergrond.webp", "2026/01/CV-ROSALIE-GUBBELS-ENG-1.png": "images/cv-rosalie-gubbels-eng-1.webp", "2026/09/BM_Babel_home_660x500.gif": "images/bm-babel-home-660x500.gif", "2026/09/Scherm%C2%ADafbeelding-2026-09-24-om-15.09.00.png": "images/schermafbeelding-2026-09-24-om-15-09-00.webp", "2026/09/Utrecht-hoarding-1024x286.png": "images/utrecht-hoarding.webp", "2026/09/schermafbeelding-2026-09-17-om-12-10-33-1024x670.png": "images/schermafbeelding-2026-09-17-om-12-10-33.webp", "2026/09/the-bar-mock-up-led-1024x453.png": "images/the-bar-mock-up-led.webp", "elementor/thumbs/BM_Babel_home_660x500_2-1-rtvox8lyg9ily7tohnj61af7tote2v4s7suo33v668.png": "images/bm-babel-home-660x500-2-1.webp", "elementor/thumbs/Card-package_FG_061126-rtj7984nrz4eivuxi1i58i2ewfl01q5vf75d6alhee.png": "images/card-package-fg-061126.webp", "elementor/thumbs/Cards-on-the-table_FG_061126-rtj792hmmywol834ez2dtjhnc4csrjjhef8gamtuga.png": "images/cards-on-the-table-fg-061126.webp", "elementor/thumbs/Flying-cards_FG_061126-rtj791jsg4ve9m4hkgnr91q6qqhfjufr2akytcv8ly.png": "images/flying-cards-fg-061126.webp", "elementor/thumbs/The-bar-led-artwork-rtj73nx1c9ibtxxqz4ylzel8dczti731no6xycuc8u.png": "images/the-bar-led-artwork.webp", "elementor/thumbs/schermafbeelding-2026-09-17-om-12-04-28-rtj7kgb9eqhp77jtxw7q0o2mc48tzkqgaro5j9y7q6.png": "images/schermafbeelding-2026-09-17-om-12-04-28.webp", "elementor/thumbs/schermafbeelding-2026-09-17-om-12-07-59-rtj7pdyraf8w5ids4j07lx8qlxx7edbpz6yx8kmt26.png": "images/schermafbeelding-2026-09-17-om-12-07-59.webp", "elementor/thumbs/the-bar-logo-rtj73bp3nkc0byz77y7l4fzxj8pffteqdmlmp5hyu8.png": "images/the-bar-logo.webp"};
+const im = p => IMG[p] || U + p;
+// Width/height of every image, so project pages can be laid out before images load
+const AR = {"images/33306847-1829069390447122-4011679310514487296-n.webp": 0.6665, "images/66697903-1599172546879313-8428388983527964672-n.webp": 0.6663, "images/img-7043-copykopie.webp": 1.5004, "images/img-7122212.webp": 0.6665, "images/img-7245-bw-1.webp": 0.6665, "images/img-7250-bw.webp": 0.6665, "images/brief-belasting.webp": 0.6565, "images/201217-1-kerst-instaslider-rg.webp": 1.0, "images/201217-2-kerst-instaslider-rgt.webp": 1.0, "images/201217-3-instaslider-rg.webp": 1.0, "images/201217-4-instaslider-rg.webp": 1.0, "images/201217-5-instaslider-rg.webp": 0.999, "images/201217-6-instaslider-rg.webp": 1.0, "images/201217-7-instaslider-rg-1.webp": 1.0, "images/reeks-stapel-54321.webp": 1.4826, "images/schermafbeelding-2021-01-07-om-12-44-42.webp": 0.705, "images/schermafbeelding-2021-01-07-om-12-53-10.webp": 1.0056, "images/schermafbeelding-2021-01-07-om-12-53-25.webp": 1.0044, "images/schermafbeelding-2021-01-07-om-12-53-33.webp": 1.0011, "images/schermafbeelding-2021-01-07-om-13-11-31.webp": 0.409, "images/schermafbeelding-2021-01-20-om-18-55-58.webp": 0.718, "images/schermafbeelding-2021-01-20-om-19-01-03.webp": 0.7055, "images/schermafbeelding-2021-01-20-om-19-03-10.webp": 0.7095, "images/compendium-boeken-2.webp": 2.0161, "images/compendium-boeken22.webp": 3.1299, "images/flyer-mijnreade.webp": 0.705, "images/folder-mijnreade.webp": 0.705, "images/illustratie-mijnreade-hersteld-05.webp": 3.936, "images/poster-groot.webp": 0.7065, "images/postertje1.webp": 0.707, "images/postertje2.webp": 0.707, "images/postertje3.webp": 0.707, "images/sporten-1.webp": 1.0, "images/sporten-2.webp": 1.0, "images/sporten-3.webp": 1.0, "images/sporten-5.webp": 1.0, "images/sporten-6.webp": 1.0, "images/img-9481-scaled.webp": 0.667, "images/img-9485-scaled.webp": 1.4993, "images/img-9504-scaled.webp": 1.4993, "images/medium-coachfinder-home-1-scaled.webp": 0.287, "images/medium-overzicht-coaches-1.webp": 0.224, "images/schermafbeelding-2021-02-01-om-12-57-42.webp": 0.706, "images/schermafbeelding-2021-02-01-om-12-58-16.webp": 0.5622, "images/schermafbeelding-2021-02-01-om-12-58-27.webp": 0.8006, "images/schermafbeelding-2021-02-28-om-13-42-26.webp": 0.4745, "images/xlarge-overzicht-coaches-met-filters-hover.webp": 0.4505, "images/xsmall-coachfinder-home-1.webp": 0.104, "images/xsmall-overzicht-coaches-1.webp": 0.1325, "images/schermafbeelding-2022-10-05-om-13-14-40.webp": 0.7057, "images/schermafbeelding-2022-10-13-om-14-16-48.webp": 1.6353, "images/schermafbeelding-2022-10-13-om-14-16-59.webp": 1.6598, "images/schermafbeelding-2022-10-13-om-14-17-23.webp": 1.6502, "images/schermafbeelding-2022-10-13-om-14-17-35.webp": 1.6543, "images/schermafbeelding-2022-10-13-om-14-17-45.webp": 1.6474, "images/schermafbeelding-2022-10-13-om-14-18-10.webp": 0.4785, "images/schermafbeelding-2022-10-13-om-14-18-21.webp": 0.7027, "images/schermafbeelding-2022-10-13-om-14-18-32.webp": 0.9524, "images/schermafbeelding-2022-10-13-om-14-18-43.webp": 1.6397, "images/tekengebied-1-kopie-13.webp": 0.7065, "images/tekengebied-1-kopie-18.webp": 0.7065, "images/tekengebied-1-kopie-19.webp": 0.7065, "images/tekengebied-1-kopie-20.webp": 0.7065, "images/toasty-achter-bar-e1664969001961.webp": 1.4452, "images/huisstijl-toasty-1-tekengebied-1-scaled.webp": 1.4134, "images/lucaskemper-bkb-forum-wetenschap-lr-150.webp": 1.4993, "images/lucaskemper-bkb-forum-wetenschap-lr-153.webp": 1.4993, "images/lucaskemper-bkb-forum-wetenschap-lr-27.webp": 1.4993, "images/schermafbeelding-2023-11-07-om-15-29-53.webp": 1.3207, "images/schermafbeelding-2023-11-07-om-15-30-06.webp": 2.1237, "images/schermafbeelding-2023-11-07-om-15-30-25.webp": 0.789, "images/schermafbeelding-2023-11-07-om-15-31-08.webp": 0.6548, "images/tekengebied-1-2x.webp": 3.7807, "images/logos-1.webp": 3.5423, "images/preview-scaled.webp": 1.8018, "images/tekengebied-1-kopie-1.webp": 1.3245, "images/tekengebied-42-1.webp": 1.4572, "images/tekengebied-42-kopie-1.webp": 1.4572, "images/tekengebied-42-kopie-2-1.webp": 1.4572, "images/tekengebied-42-kopie-3-1.webp": 1.4564, "images/tekengebied-42-kopie-4-1.webp": 1.4564, "images/tekengebied-42-kopie-5-1.webp": 1.4552, "images/tekengebied-42-kopie-6-1.webp": 1.4552, "images/slo-not-2025-14.webp": 0.6667, "images/slo-not-2025-2.webp": 1.5, "images/slo-not-2025-3.webp": 1.5, "images/slo-not-2025-4.webp": 1.5, "images/slo-not-2025-5.webp": 1.5, "images/slo24-rep-12-1.webp": 1.5004, "images/slo24-rep-59.webp": 1.5004, "images/slo24-rep-62-1.webp": 1.5004, "images/schermafbeelding-2025-03-24-om-14-57-49.webp": 1.7841, "images/schermafbeelding-2025-03-24-om-14-58-07.webp": 1.8416, "images/plenair-preview-1.webp": 1.5004, "images/plenair-preview-20.webp": 1.5004, "images/tekengebied-1-kopie-2.webp": 1.8147, "images/tekengebied-1.webp": 0.7064, "images/achtergrond.webp": 0.5194, "images/cv-rosalie-gubbels-eng-1.webp": 0.6605, "images/bm-babel-home-660x500.gif": 1.32, "images/schermafbeelding-2026-09-24-om-15-09-00.webp": 0.7087, "images/utrecht-hoarding.webp": 3.5833, "images/schermafbeelding-2026-09-17-om-12-10-33.webp": 1.5277, "images/the-bar-mock-up-led.webp": 2.2599, "images/bm-babel-home-660x500-2-1.webp": 0.8001, "images/card-package-fg-061126.webp": 0.8015, "images/cards-on-the-table-fg-061126.webp": 0.8, "images/flying-cards-fg-061126.webp": 0.8015, "images/the-bar-led-artwork.webp": 0.7969, "images/schermafbeelding-2026-09-17-om-12-04-28.webp": 0.7068, "images/schermafbeelding-2026-09-17-om-12-07-59.webp": 0.7063, "images/the-bar-logo.webp": 1.0916};
+// Homepage tiles: the original homepage image first (it sets the tile's shape), then only project images with the same proportions fade in
+const TILES = {"compendium-geneeskunde": {"ar": 2.0161, "frames": ["thumbs/compendium-geneeskunde-0.webp", "thumbs/compendium-geneeskunde-1.webp"]}, "ombudsman": {"ar": 1.321, "frames": ["thumbs/ombudsman-0.webp"]}, "stress-smash": {"ar": 0.704, "frames": ["thumbs/stress-smash-0.webp", "thumbs/stress-smash-1.webp", "thumbs/stress-smash-2.webp"]}, "wees-lief": {"ar": 0.709, "frames": ["thumbs/wees-lief-0.webp"]}, "fiveguys": {"ar": 0.801, "frames": ["thumbs/fiveguys-0.webp", "thumbs/fiveguys-1.webp", "thumbs/fiveguys-2.webp", "thumbs/fiveguys-3.webp"]}, "toren-van-babel": {"ar": 0.8, "frames": ["thumbs/toren-van-babel-0.webp"]}, "zpannend-zernike": {"ar": 1.8018, "frames": ["thumbs/zpannend-zernike-0.webp"]}, "corona-factsheets-rijksoverheid": {"ar": 0.706, "frames": ["thumbs/corona-factsheets-rijksoverheid-0.webp", "thumbs/corona-factsheets-rijksoverheid-1.webp", "thumbs/corona-factsheets-rijksoverheid-2.webp", "thumbs/corona-factsheets-rijksoverheid-3.webp"]}, "branding-toekomstscenario-kind-en-gezinsbescherming": {"ar": 0.478, "frames": ["thumbs/branding-toekomstscenario-kind-en-gezinsbescherming-0.webp"]}, "slo": {"ar": 1.4993, "frames": ["thumbs/slo-0.webp", "thumbs/slo-1.webp", "thumbs/slo-2.webp", "thumbs/slo-3.webp"]}, "mijnreade": {"ar": 1.004, "frames": ["thumbs/mijnreade-0.webp"]}, "shlohmo": {"ar": 0.707, "frames": ["thumbs/shlohmo-0.webp", "thumbs/shlohmo-1.webp", "thumbs/shlohmo-2.webp", "thumbs/shlohmo-3.webp"]}, "coachfinder": {"ar": 0.474, "frames": ["thumbs/coachfinder-0.webp", "thumbs/coachfinder-1.webp", "thumbs/coachfinder-2.webp"]}, "sporten-op-pleintjes": {"ar": 0.706, "frames": ["thumbs/sporten-op-pleintjes-0.webp"]}};
+// Order on the homepage, chosen so every row of three closes neatly
+// Rows of the full homepage on wide screens; also the order everywhere else
+const ROWS = [["compendium-geneeskunde", "sporten-op-pleintjes", "stress-smash"], ["toren-van-babel", "zpannend-zernike"], ["ombudsman", "wees-lief", "corona-factsheets-rijksoverheid"], ["slo", "coachfinder", "branding-toekomstscenario-kind-en-gezinsbescherming"], ["fiveguys", "mijnreade", "shlohmo"]];
+const ORDER = ROWS.flat();
+// Services page content
+const SERVICES = {"nl": {"nav": "Diensten", "title": "Diensten", "lead": "Van concept tot huisstijl, van campagne tot congreszaal: ontwerp dat helder communiceert en doet wat het moet doen. Elk project begint met de vraag wat het ontwerp moet bereiken.", "servTitle": "Wat ik maak", "seeAlso": "Bijvoorbeeld", "items": [["Concepting", "Van vraag naar idee: creatieve concepten en invalshoeken voor campagnes, activaties en merken, die een boodschap scherp en opvallend maken.", ["wees-lief"]], ["Branding & huisstijl", "Logo, huisstijl, beeldtaal en brand guides voor organisaties, merken en evenementen.", ["ombudsman"]], ["Campagnes", "Campagnevisuals voor print, online en social media, afgestemd op de doelgroep.", ["stress-smash"]], ["Events & ruimtes", "Backdrops, standgraphics en interactieve achtergronden die een ruimte laten spreken.", ["slo"]], ["Editorial & print", "Boeken, magazines, posters, flyers en folders, van omslag tot binnenwerk.", ["compendium-geneeskunde"]], ["Web & motion", "Webdesign voor desktop, tablet en mobiel, en animaties en uitlegvideo’s die een boodschap tot leven brengen.", ["coachfinder"]]], "ctaTitle": "Een project in gedachten?", "ctaText": "Vertel me wat je wilt bereiken. Een kennismaking is vrijblijvend.", "cta": "Plan een kennismaking"}, "en": {"nav": "Services", "title": "Services", "lead": "From concept to visual identity, from campaign to conference hall: design that communicates clearly and does what it needs to do. Every project starts with one question: what should the design achieve?", "servTitle": "What I make", "seeAlso": "For example", "items": [["Concepting", "From question to idea: creative concepts and angles for campaigns, activations and brands that make a message sharp and memorable.", ["wees-lief"]], ["Branding & identity", "Logos, visual identities, imagery and brand guides for organisations, brands and events.", ["ombudsman"]], ["Campaigns", "Campaign visuals for print, online and social media, tailored to the audience.", ["stress-smash"]], ["Events & spaces", "Backdrops, stand graphics and interactive backgrounds that make a space speak.", ["slo"]], ["Editorial & print", "Books, magazines, posters, flyers and leaflets, from cover to inside pages.", ["compendium-geneeskunde"]], ["Web & motion", "Web design for desktop, tablet and mobile, plus animations and explainer videos that bring a message to life.", ["coachfinder"]]], "ctaTitle": "Have a project in mind?", "ctaText": "Tell me what you want to achieve. An introductory chat is free of obligation.", "cta": "Plan an introduction"}};
+const ARROW = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+
+/* ---------- Interface text ---------- */
+const T = {
+  nl:{
+    nav:{work:"Werk",services:"Diensten",contact:"Contact",about:"Over mij",photography:"Fotografie"},
+    heroTitle:"Ontwerp voor merken, campagnes en doelen die <em>ertoe doen</em>.",
+    heroText:"Ik ben Rosalie Gubbels, creative designer uit Amsterdam. Ik bedenk concepten en maak huisstijlen, campagnes, websites, posters, boeken, magazines, presentaties, verpakkingen, video’s en meer, met een zwak voor duurzame en maatschappelijk betrokken opdrachten.",
+    cta:"Neem contact op", selected:"Geselecteerd werk", all:"Alles", filterLabel:"Filter op categorie",
+    back:"← Al het werk", client:"Opdrachtgever", year:"Jaar", disciplines:"Disciplines",
+    prev:"← Vorige", next:"Volgende →", more:"Meer projecten", image:"afbeelding",
+    close:"Sluiten ✕", prevImg:"Vorige afbeelding", nextImg:"Volgende afbeelding", viewer:"Afbeeldingen bekijken",
+    photoTitle:"Fotografie",
+    photoText:"In mijn vrije tijd fotografeer ik graag, vooral zwart-witportretten. Ik laat mensen niet poseren, want juist dan ontstaan de meest spontane en mooie foto’s.",
+    photoAlt:"Zwart-witportret",
+    aboutTitle:"Hoi, ik ben Rosalie.",
+    about:["Ik ben creative designer uit Amsterdam. Ik maak graag mooie ontwerpen voor duurzame en maatschappelijk verantwoorde doelen, en ik wil met mijn werk bijdragen aan een betere wereld.",
+           "Goed design is niet alleen mooi. Het is ook functioneel en effectief, en het geeft je communicatie meerwaarde. Daarom begint elk project bij mij met één vraag: wat moet het ontwerp bereiken? Ik luister goed naar de opdrachtgever en de gebruikers, en zoek de best mogelijke oplossing."],
+    cvAlt:"Cv van Rosalie Gubbels",
+    contactTitle:"Laten we samenwerken.",
+    contactText:"Heb je een project, een vraag of een idee dat je zichtbaar wilt maken? Stuur me een bericht of bel me.",
+    email:"E-mail", phone:"Telefoon", based:"Locatie", basedVal:"Amsterdam",
+    docTitle:{work:"Rosalie Gubbels Creative Design",cv:"CV",services:"Diensten",photography:"Fotografie",about:"Over mij",contact:"Contact"}
+  },
+  en:{
+    nav:{work:"Work",services:"Services",contact:"Contact",about:"About",photography:"Photography"},
+    heroTitle:"Design for brands, campaigns and causes that <em>matter</em>.",
+    heroText:"I’m Rosalie Gubbels, a creative designer from Amsterdam. I develop concepts and make visual identities, campaigns, websites, posters, books, magazines, presentations, packaging, videos and more, with a soft spot for sustainable and socially responsible work.",
+    cta:"Let’s talk", selected:"Selected work", all:"All", filterLabel:"Filter by category",
+    back:"← All work", client:"Client", year:"Year", disciplines:"Disciplines",
+    prev:"← Previous", next:"Next →", more:"More projects", image:"image",
+    close:"Close ✕", prevImg:"Previous image", nextImg:"Next image", viewer:"Image viewer",
+    photoTitle:"Photography",
+    photoText:"In my spare time I like to take photos, mostly black-and-white portraits. I never ask people to pose, because that’s when the most spontaneous and beautiful pictures happen.",
+    photoAlt:"Black-and-white portrait",
+    aboutTitle:"Hi, I’m Rosalie.",
+    about:["I’m a creative designer from Amsterdam. I love making beautiful designs for sustainable and socially responsible causes, and I want my work to help make the world a better place.",
+           "Good design isn’t only beautiful. It’s also functional and effective, and it adds value to your communication. That’s why every project starts with one question: what should the design achieve? I listen closely to the client and the people who’ll use it, and look for the best possible solution."],
+    cvAlt:"CV of Rosalie Gubbels",
+    contactTitle:"Let’s work together.",
+    contactText:"Do you have a project, a question or an idea you’d like to bring to life visually? Send me a message or give me a call.",
+    email:"Email", phone:"Phone", based:"Based in", basedVal:"Amsterdam, the Netherlands",
+    docTitle:{work:"Rosalie Gubbels Creative Design",cv:"CV",services:"Services",photography:"Photography",about:"About",contact:"Contact"}
+  }
+};
+// Filter keys stay fixed; only the label changes per language
+const CATS = ["Branding","Campaigns","Editorial","Events","Web & UI","Posters","Motion"];
+const CAT_LABEL = {nl:{Campaigns:"Campagnes"}, en:{}};
+const catName = c => CAT_LABEL[lang][c] || c;
+
+/* ---------- Projects ---------- */
+const PROJECTS = [
+  { slug:"compendium-geneeskunde", title:"Compendium Geneeskunde", year:"2020", cats:["Editorial","Branding"],
+    client:{nl:"Compendium Geneeskunde",en:"Compendium Geneeskunde"},
+    text:{
+      nl:["Compendium Geneeskunde vat de studie geneeskunde samen in vijf boeken, met schema’s, tabellen en illustraties.", "Een nieuwe vormgeving voor Compendium 2.0. De bekende kleuren en anatomische tekeningen blijven herkenbaar en het vijfde deel kreeg een nieuwe kleur: paars. Naast de omslagen is ook de binnenkant van de boeken vormgegeven, in samenwerking met het Compendium-team."],
+      en:["Compendium Geneeskunde (Compendium of Medicine) sums up the study of medicine in five books, with diagrams, tables and illustrations.", "A fresh design for Compendium 2.0. The familiar colours and anatomical drawings stay recognisable, and the fifth volume got a new colour: purple. Besides the covers, the inside pages were designed together with the Compendium team."]},
+    thumbs:[0,1],
+    images:["2021/01/compendium-boeken-2.png","2021/01/Reeks_stapel_54321.png","2021/01/compendium-boeken22.png"] },
+
+  { slug:"ombudsman", title:"IOI World Conference 2024", year:"2024", cats:["Branding","Events"],
+    client:{nl:"Nationale ombudsman · IOI",en:"National Ombudsman · IOI"},
+    text:{
+      nl:["Huisstijl voor de IOI World Conference 2024 in Den Haag. De grafische elementen en kleuren van de Nationale ombudsman en het internationale IOI komen er samen in terug."],
+      en:["Visual identity for the IOI World Conference 2024 in The Hague, bringing together the graphic elements and colours of the Dutch National Ombudsman and the international IOI."]},
+    thumbs:[1,0,2,3],
+    images:["2023/11/"+SH+"2023-11-07-om-15.30.06.png","2023/11/"+SH+"2023-11-07-om-15.29.53.png","2023/11/"+SH+"2023-11-07-om-15.30.25.png","2023/11/"+SH+"2023-11-07-om-15.31.08.png","2023/11/logos-1.jpg"] },
+
+  { slug:"stress-smash", title:"Stress Smash", year:"2025", cats:["Campaigns"],
+    client:{nl:"The Pando Network",en:"The Pando Network"},
+    text:{
+      nl:["Visuals voor Stress Smash, een campagne in opdracht van The Pando Network die middelbare scholieren aanmoedigt om open over mentale gezondheid te praten.", "Tijdens een speelse activiteit in de schoolkantine kregen leerlingen kaartjes met de contactgegevens van een vertrouwenspersoon en een link naar een website over mentale gezondheid. Met een vleugje humor geven de kaartjes een steuntje in de rug en helpen ze het taboe te doorbreken."],
+      en:["Visuals for Stress Smash, a campaign commissioned by The Pando Network that encourages high school students to talk openly about mental health.", "During a playful activity in the school cafeteria, students received cards with the contact details of a trusted person and a link to a mental health website. With a touch of humour, the cards give a supportive nudge and help break the stigma."]},
+    thumbs:[0,1,3,5],
+    images:["2025/01/Tekengebied-1-kopie-1.png","2025/01/Tekengebied-42-1.png","2025/01/Tekengebied-42-kopie-1.png","2025/01/Tekengebied-42-kopie-6-1.png","2025/01/Tekengebied-42-kopie-5-1.png","2025/01/Tekengebied-42-kopie-4-1.png","2025/01/Tekengebied-42-kopie-3-1.png","2025/01/Tekengebied-42-kopie-2-1.png"] },
+
+  { slug:"wees-lief", title:"Wees Lief", year:"2026", cats:["Campaigns"],
+    text:{
+      nl:["Slogan en campagneontwerp voor ‘Wees Lief’."],
+      en:["Slogan and campaign design for ‘Wees Lief’ (Be Kind)."]},
+    thumbs:[0],
+    images:["2026/09/"+SH+"2026-09-24-om-15.09.00.png"] },
+
+  { slug:"fiveguys", title:"Five Guys", year:"2026", cats:["Campaigns","Branding","Posters"],
+    client:{nl:"Five Guys",en:"Five Guys"},
+    text:{
+      nl:["Promotie- en winkelontwerp voor Five Guys in Europa, het Midden-Oosten en Azië: een kaartspel, een logo en LED-artwork voor een bar, een bouwschutting, posters en een stickerset met ingrediënten."],
+      en:["Promotional and in-store design for Five Guys across Europe, the Middle East and Asia: a card game, a bar logo with LED artwork, store hoarding, posters and an ingredient sticker pack."]},
+    thumbs:[0,1,3,8],
+    sections:[
+      {h:{nl:"Promotievisuals kaartspel · Italië",en:"Promotional visuals, card game · Italy"}, imgs:[0,1,2]},
+      {h:{nl:"Logo en LED-artwork ‘The Bar’ · Dubai Airport",en:"‘The Bar’ logo and LED artwork · Dubai Airport"}, imgs:[3,4,5]},
+      {h:{nl:"Bouwschutting · Utrecht",en:"Store hoarding · Utrecht"}, imgs:[6]},
+      {h:{nl:"Gamesposter · Hongkong",en:"Games poster · Hong Kong"}, imgs:[7]},
+      {h:{nl:"Poster ‘Meet our manager’",en:"‘Meet our manager’ poster"}, imgs:[8]},
+      {h:{nl:"Stickerset ingrediënten · Beijing",en:"Ingredient sticker pack · Beijing"}, imgs:[9]}
+    ],
+    images:["elementor/thumbs/Flying-cards_FG_061126-rtj791jsg4ve9m4hkgnr91q6qqhfjufr2akytcv8ly.png","elementor/thumbs/Cards-on-the-table_FG_061126-rtj792hmmywol834ez2dtjhnc4csrjjhef8gamtuga.png","elementor/thumbs/Card-package_FG_061126-rtj7984nrz4eivuxi1i58i2ewfl01q5vf75d6alhee.png","elementor/thumbs/the-bar-logo-rtj73bp3nkc0byz77y7l4fzxj8pffteqdmlmp5hyu8.png","2026/09/the-bar-mock-up-led-1024x453.png","elementor/thumbs/The-bar-led-artwork-rtj73nx1c9ibtxxqz4ylzel8dczti731no6xycuc8u.png","2026/09/Utrecht-hoarding-1024x286.png","elementor/thumbs/schermafbeelding-2026-09-17-om-12-04-28-rtj7kgb9eqhp77jtxw7q0o2mc48tzkqgaro5j9y7q6.png","elementor/thumbs/schermafbeelding-2026-09-17-om-12-07-59-rtj7pdyraf8w5ids4j07lx8qlxx7edbpz6yx8kmt26.png","2026/09/schermafbeelding-2026-09-17-om-12-10-33-1024x670.png"] },
+
+  { slug:"toren-van-babel", title:"Toren van Babel", year:"2026", cats:["Campaigns","Motion"],
+    client:{nl:"Bijbels Museum",en:"Bijbels Museum"},
+    text:{
+      nl:["Visual voor de open call ‘Toren van Babel’ van het Bijbels Museum, als stilstaand beeld en als animatie."],
+      en:["Visual for the ‘Toren van Babel’ (Tower of Babel) open call at the Bijbels Museum, as a still and as an animation."]},
+    thumbs:[1,0],
+    images:["elementor/thumbs/BM_Babel_home_660x500_2-1-rtvox8lyg9ily7tohnj61af7tote2v4s7suo33v668.png","2026/09/BM_Babel_home_660x500.gif"] },
+
+  { slug:"zpannend-zernike", title:"Zpannend Zernike", year:"2023", cats:["Events","Motion"],
+    client:{nl:"Rijksuniversiteit Groningen",en:"University of Groningen"},
+    text:{
+      nl:["Interactieve achtergrond voor de presentatiezaal van Zpannend Zernike, het wetenschapsfestival voor kinderen van de Rijksuniversiteit Groningen.", "Een vrolijk en expressief ontwerp met geanimeerde elementen die rustig door de ruimte bewegen. De animatie brengt het ontwerp tot leven, zonder af te leiden van de presentatie."],
+      en:["Interactive background for the presentation room of Zpannend Zernike, the University of Groningen’s science festival for children.", "A cheerful, expressive design with animated elements that move unobtrusively through the space. The animation brings the design to life without distracting from the presentation."]},
+    link:{href:"https://youtu.be/8PwHhII7wZw", label:{nl:"Bekijk de animatie",en:"Watch the animation"}},
+    thumbs:[1,2,3,0],
+    images:["2023/11/Tekengebied-1@2x.png","2023/11/preview-scaled.jpg","2023/11/LucasKemper_BKB_Forum_Wetenschap_LR-27.jpg","2023/11/LucasKemper_BKB_Forum_Wetenschap_LR-150.jpg","2023/11/LucasKemper_BKB_Forum_Wetenschap_LR-153.jpg"] },
+
+  { slug:"corona-factsheets-rijksoverheid", title:"Corona Factsheets Rijksoverheid", year:"2020", cats:["Campaigns","Editorial"],
+    client:{nl:"Rijksoverheid · via BKB",en:"Dutch government · via BKB"},
+    text:{
+      nl:["Factsheets en social-mediacarrousels voor de coronacommunicatie van de Rijksoverheid, in de huisstijl van de coronacampagne. Gemaakt bij BKB | Het Campagnebureau."],
+      en:["Factsheets and social media carousels for the Dutch government’s corona communication, in the style of the government’s corona campaign. Made at BKB | Het Campagnebureau."]},
+    thumbs:[6,13,7,15],
+    images:["2021/02/Schermafbeelding-2021-02-01-om-12.57.42.png","2021/02/Schermafbeelding-2021-02-01-om-12.58.27.png","2021/01/Schermafbeelding-2021-01-20-om-18.55.58.png","2021/01/Schermafbeelding-2021-01-20-om-19.03.10.png","2021/01/Schermafbeelding-2021-01-20-om-19.01.03.png","2021/02/Schermafbeelding-2021-02-01-om-12.58.16.png","2021/01/sporten-1-768x768.png","2021/01/sporten-2-768x768.png","2021/01/sporten-3-768x768.png","2021/01/sporten-5-768x768.png","2021/01/sporten-6-768x768.png","2021/01/201217_7_instaslider_RG-1-768x768.png","2021/01/201217_1_Kerst_instaslider_RG-768x768.png","2021/01/201217_2_Kerst_instaslider_RGT-768x768.png","2021/01/201217_3_instaslider_RG-768x768.png","2021/01/201217_4_instaslider_RG-768x768.png","2021/01/201217_5_instaslider_RG-768x769.png","2021/01/201217_6_instaslider_RG-768x768.png"] },
+
+  { slug:"branding-toekomstscenario-kind-en-gezinsbescherming", title:"Toekomstscenario kind- en gezinsbescherming", year:"2022", cats:["Branding"],
+    client:{nl:"Toekomstscenario kind- en gezinsbescherming",en:"Toekomstscenario kind- en gezinsbescherming"},
+    text:{
+      nl:["Huisstijl voor Toekomstscenario kind- en gezinsbescherming."],
+      en:["Brand identity for Toekomstscenario kind- en gezinsbescherming (Future Scenario for Child and Family Protection)."]},
+    thumbs:[7,0,2],
+    images:["2022/10/Schermafbeelding-2022-10-13-om-14.16.48.png","2022/10/Schermafbeelding-2022-10-13-om-14.16.59.png","2022/10/Schermafbeelding-2022-10-13-om-14.17.23.png","2022/10/Schermafbeelding-2022-10-13-om-14.17.35.png","2022/10/Schermafbeelding-2022-10-13-om-14.17.45.png","2022/10/Schermafbeelding-2022-10-13-om-14.18.10.png","2022/10/Schermafbeelding-2022-10-13-om-14.18.21.png","2022/10/Schermafbeelding-2022-10-13-om-14.18.32.png","2022/10/Schermafbeelding-2022-10-13-om-14.18.43.png"] },
+
+  { slug:"slo", title:"SLO Congres & NOT", year:"2025", cats:["Events"],
+    client:{nl:"SLO",en:"SLO"},
+    text:{
+      nl:["Digitale achtergrond voor het congres van SLO (Stichting Leerplanontwikkeling), in twee versies voor de achterwand: een screensaver en een achtergrond waarover de presentaties werden geprogrammeerd.", "Daarnaast de graphics voor de stand van SLO op de Nationale Onderwijs Tentoonstelling (NOT)."],
+      en:["Digital backdrop for the congress of SLO (Stichting Leerplanontwikkeling, the Dutch curriculum development foundation), in two versions for the back wall: a screensaver and a background over which the presentations were programmed.", "Also the graphics for the SLO stand at the Nationale Onderwijs Tentoonstelling (NOT), the national education exhibition."]},
+    thumbs:[9,2,3,8],
+    images:["2025/03/"+SH+"2025-03-24-om-14.58.07.png","2025/03/"+SH+"2025-03-24-om-14.57.49.png","2025/03/plenair_preview-1.jpg","2025/03/SLO24-rep-12-1.jpg","2025/03/plenair_preview-20.jpg","2025/03/SLO24-rep-59.jpg","2025/03/SLO24-rep-62-1.jpg","2025/03/SLO-NOT-2025-2.jpg","2025/03/SLO-NOT-2025-3.jpg","2025/03/SLO-NOT-2025-4.jpg","2025/03/SLO-NOT-2025-5.jpg","2025/03/SLO-NOT-2025-14.jpg"] },
+
+  { slug:"mijnreade", title:"mijnReade", year:"2020", cats:["Campaigns","Branding","Motion"],
+    client:{nl:"Reade",en:"Reade"},
+    text:{
+      nl:["Campagne voor mijnReade, de online cliëntomgeving van revalidatiecentrum Reade, met flyers, folders, banners en een uitlegvideo over het product.", "De beeldtaal is opgebouwd uit illustraties die de cliënten van Reade verbeelden. Ook de communicatieplanning en de verspreiding van alle materialen maakten deel uit van het project."],
+      en:["Campaign for mijnReade, the online client portal of the Reade rehabilitation centre, with flyers, leaflets, banners and an explainer video about the product.", "The visual language is built on illustrations that represent Reade’s clients. The project also included the communication planning and the distribution of all materials."]},
+    link:{href:"https://www.rosaliegubbels.nl/wp-content/uploads/2021/05/Videoconsult_final.mp4", label:{nl:"Bekijk de uitlegvideo",en:"Watch the explainer video"}},
+    thumbs:[0,4,1],
+    images:["2021/01/Schermafbeelding-2021-01-07-om-12.53.10.png","2021/01/Schermafbeelding-2021-01-07-om-12.53.33.png","2021/01/Schermafbeelding-2021-01-07-om-13.11.31.png","2021/01/Schermafbeelding-2021-01-07-om-12.44.42.png","2021/01/folder-mijnReade.png","2021/01/flyer-mijnReade.png","2021/01/illustratie-mijnReade-Hersteld-05.jpg"] },
+
+  { slug:"shlohmo", title:"Shlohmo", year:"", cats:["Branding","Posters"],
+    client:{nl:"Studieproject",en:"Study project"},
+    text:{
+      nl:["Huisstijl voor de artiest Shlohmo, gemaakt als studieproject bij Communicatie en Multimedia Design. De beeldtaal is geïnspireerd op de binnenkant van een computer: de vormen en contrasterende kleuren passen bij zijn donkere, elektronische sound."],
+      en:["Brand identity for the artist Shlohmo, created as a study project in Communication and Multimedia Design. The visual language is inspired by the inside of a computer: the shapes and contrasting colours match his dark, electronic sound."]},
+    thumbs:[0,1,2,3],
+    images:["2021/01/postertje2.png","2021/01/postertje3.png","2021/01/postertje1.png","2021/01/poster-groot.png"] },
+
+  { slug:"coachfinder", title:"Coachfinder", year:"2021", cats:["Web & UI"],
+    client:{nl:"Schwung Innovation · WPG",en:"Schwung Innovation · WPG"},
+    text:{
+      nl:["Webdesign voor Coachfinder, een website van Psychologie Magazine die mensen helpt de coach te vinden die bij hen past. Ontworpen voor desktop, tablet en mobiel, in opdracht van Schwung Innovation (onderdeel van WPG Uitgevers)."],
+      en:["Web design for Coachfinder, a website by Psychologie Magazine that helps people find the coach that suits them. Designed for desktop, tablet and mobile, commissioned by Schwung Innovation (part of WPG Uitgevers)."]},
+    thumbs:[0,1,3,2],
+    images:["2021/02/Schermafbeelding-2021-02-28-om-13.42.26.png","2021/02/Medium-Coachfinder-Home-1-scaled.jpg","2021/02/xSmall-Coachfinder-Home-1.png","2021/02/xLarge-Overzicht-coaches-met-filters-hover.png","2021/02/Medium-Overzicht-coaches-1.png","2021/02/xSmall-Overzicht-coaches-1.png"] },
+
+  { slug:"sporten-op-pleintjes", title:"Sporten op de pleintjes", year:"2025", cats:["Posters","Campaigns"],
+    client:{nl:"The Pando Network",en:"The Pando Network"},
+    text:{
+      nl:["Stijl en poster voor ‘Sporten op de pleintjes’, een evenement voor kinderen van 10 tot 14 jaar, in opdracht van The Pando Network."],
+      en:["Visual style and poster for ‘Sporten op de pleintjes’ (Sports at the playgrounds), an event for children aged 10 to 14, commissioned by The Pando Network."]},
+    thumbs:[1,0,2],
+    images:["2025/04/Tekengebied-1-kopie-2.png","2025/04/Tekengebied-1.png","2025/04/achtergrond.png"] }
+];
+
+const PHOTOS = ["2019/07/IMG_7245-bw-1-683x1024.jpg","2019/07/brief-belasting-672x1024.jpg","2019/07/IMG_7250-bw-683x1024.jpg","2019/07/33306847_1829069390447122_4011679310514487296_n-683x1024.jpg","2019/07/IMG_7122212-683x1024.jpg","2019/07/66697903_1599172546879313_8428388983527964672_n-682x1024.jpg","2019/07/IMG_7043-copykopie.jpg","2021/02/IMG_9481-scaled.jpg","2021/02/IMG_9485-scaled.jpg","2021/02/IMG_9504-scaled.jpg"];
+
+/* ---------- Helpers & state ---------- */
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const store = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+};
+let lang = store.get("rg-lang") || ((navigator.language||"").toLowerCase().startsWith("nl") ? "nl" : "en");
+if(!T[lang]) lang = "nl";
+let current = "";          // current page key: "" (work), "about", "contact", "photography" or a project slug
+let activeCat = "All";
+$("#yr").textContent = new Date().getFullYear();
+
+/* ---------- Static pages ---------- */
+function renderChrome(){
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  const link = k => `<a href="#${k==="work"?"":k}" data-go="${k==="work"?"":k}" data-nav="${k}">${t.nav[k]}</a>`;
+  $("#nav").innerHTML = ["work","services","about","contact"].map(link).join("");
+  $$(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang===lang));
+  $("#lbx").textContent = t.close;
+  $("#lbx").setAttribute("aria-label", t.close.replace(" ✕",""));
+  $("#lbp").setAttribute("aria-label", t.prevImg);
+  $("#lbn").setAttribute("aria-label", t.nextImg);
+  $("#lb").setAttribute("aria-label", t.viewer);
+
+  $("#view-work").innerHTML = `
+    <div class="band"><div class="wrap hero">
+      <h1>${t.heroTitle}</h1>
+      <div class="hero-sub">
+        <p>${esc(t.heroText)}</p>
+        <a class="btn" href="#contact" data-go="contact">${esc(t.cta)} ${ARROW}</a>
+      </div>
+    </div></div>
+    <div class="wrap">
+      <div class="work-head">
+        <h2>${esc(t.selected)} <small id="count"></small></h2>
+        <div class="filters" id="filters" role="group" aria-label="${esc(t.filterLabel)}"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>`;
+  renderFilters(); renderGrid();
+
+  $("#view-about").innerHTML = `
+    <div class="band"><div class="wrap page">
+      <h1>${esc(t.aboutTitle)}</h1>
+      ${t.about.map(p=>`<p class="lead">${esc(p)}</p>`).join("")}
+      <p style="margin:40px 0 0"><a class="btn" href="#contact" data-go="contact">${esc(t.cta)} ${ARROW}</a></p>
+    </div></div>
+    <div class="wrap page-body">
+    </div>`;
+
+  $("#view-cv").innerHTML = `
+    <div class="band"><div class="wrap page">
+      <h1>CV</h1>
+    </div></div>
+    <div class="wrap page-body">
+      <figure class="cv" id="cv"><img loading="lazy" src="${im("2026/01/CV-ROSALIE-GUBBELS-ENG-1.png")}" alt="${esc(t.cvAlt)}"></figure>
+    </div>`;
+
+  $("#view-photography").innerHTML = `
+    <div class="band"><div class="wrap page">
+      <h1>${esc(t.photoTitle)}</h1>
+      <p class="lead">${esc(t.photoText)}</p>
+    </div></div>
+    <div class="wrap page-body">
+      <div class="photos" id="photos">${PHOTOS.map((s,k)=>`<figure><img loading="lazy" src="${im(s)}" alt="${esc(t.photoAlt)} ${k+1}"></figure>`).join("")}</div>
+    </div>`;
+
+  const sv = SERVICES[lang];
+  const proj = s => PROJECTS.find(p => p.slug === s);
+  $("#view-services").innerHTML = `
+    <div class="band"><div class="wrap page">
+      <h1>${esc(sv.title)}</h1>
+      <p class="lead">${esc(sv.lead)}</p>
+    </div></div>
+    <div class="wrap page-body">
+      <h2 class="sec-h">${esc(sv.servTitle)}</h2>
+      <div class="services">${sv.items.map(([h,d,ex]) => `
+        <div class="service">
+          <h3>${esc(h)}</h3>
+          <p>${esc(d)}</p>
+          <p class="ex"><span>${esc(sv.seeAlso)}:</span> ${ex.map(s => proj(s)).filter(Boolean).map(p => `<a href="#${p.slug}" data-go="${p.slug}">${esc(p.title)}</a>`).join(", ")}</p>
+        </div>`).join("")}</div>
+      <div class="cta-band">
+        <div><h2>${esc(sv.ctaTitle)}</h2><p>${esc(sv.ctaText)}</p></div>
+        <a class="btn" href="#contact" data-go="contact">${esc(sv.cta)} ${ARROW}</a>
+      </div>
+    </div>`;
+
+  $("#footnav").innerHTML = `<a href="#cv" data-go="cv">CV</a><a href="#photography" data-go="photography">${t.nav.photography}</a>`;
+
+  $("#view-contact").innerHTML = `
+    <div class="wrap contact-wrap">
+      <h1>${esc(t.contactTitle)}</h1>
+      <p class="lead">${esc(t.contactText)}</p>
+      <dl class="contact-list">
+        <div><dt>${esc(t.email)}</dt><dd><a href="mailto:rosaliegubbels@gmail.com">rosaliegubbels@gmail.com</a></dd></div>
+        <div><dt>${esc(t.phone)}</dt><dd><a href="tel:+31618667434">+31 6 18 66 74 34</a></dd></div>
+        <div><dt>${esc(t.based)}</dt><dd>${esc(t.basedVal)}</dd></div>
+      </dl>
+    </div>`;
+}
+
+/* ---------- Home grid ---------- */
+function renderFilters(){
+  const used = CATS.filter(c => PROJECTS.some(p => p.cats.includes(c)));
+  $("#filters").innerHTML = ["All",...used].map(c =>
+    `<button class="chip" type="button" data-cat="${esc(c)}">${esc(c==="All"?T[lang].all:catName(c))}</button>`).join("");
+}
+function perRow(){ return innerWidth > 960 ? 3 : innerWidth > 560 ? 2 : 1; }
+function tileHTML(p, i, style){
+  const t = TILES[p.slug];
+  const frames = t.frames.map((src,k) =>
+    `<img ${k===0?'class="on"':''} ${i>5?'loading="lazy"':''} src="${src}" alt="${k===0?esc(p.title):''}">`).join("");
+  return `<a class="tile" href="#${p.slug}" data-go="${p.slug}" style="${style}">
+      <div class="frames" style="aspect-ratio:${t.ar}">${frames}</div>
+      <div class="tile-meta">
+        <h3 class="tile-h">${esc(p.title)}</h3>
+        <div class="tags">${p.cats.map(c=>`<span class="tag">${esc(catName(c))}</span>`).join("")}</div>
+      </div></a>`;
+}
+function renderGrid(){
+  const n = perRow();
+  const list = ORDER.map(s => PROJECTS.find(p => p.slug === s)).filter(p => activeCat==="All" || p.cats.includes(activeCat));
+  const avg = n * 0.96;  // typical sum of proportions in a full row
+  let html = "", i = 0;
+  // full overview on a wide screen uses the hand-made rows; otherwise chunk the list
+  const groups = [];
+  if(n === 3 && activeCat === "All") ROWS.forEach(r => groups.push(r.map(s => PROJECTS.find(p => p.slug === s))));
+  else for(let r = 0; r < list.length; r += n) groups.push(list.slice(r, r + n));
+  for(const row of groups){
+    const sum = row.reduce((a,p) => a + TILES[p.slug].ar, 0);
+    const full = row.length === n || n === 1 || sum >= avg * 0.85;  // a short row of wide images can still fill the width
+    html += `<div class="row">` + row.map(p => {
+      const ar = TILES[p.slug].ar;
+      // full rows share the width by proportion; a short last row keeps a normal height instead of blowing up
+      const style = full ? `flex:${ar} 1 0` : `flex:0 0 calc((100% - ${n-1} * var(--gap)) * ${ar / Math.max(avg, sum)})`;
+      return tileHTML(p, i++, style);
+    }).join("") + `</div>`;
+  }
+  $("#grid").innerHTML = html;
+  $("#grid").dataset.n = n;
+  $("#count").textContent = `(${list.length})`;
+  $$(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.cat===activeCat));
+}
+let lastN = perRow();
+addEventListener("resize", () => {
+  if(perRow() === lastN) return; lastN = perRow();
+  if($("#grid")) renderGrid();
+  if(!$("#view-project").hidden) show(current, {scroll:false});
+});
+function applyFilter(){ renderGrid(); }
+
+// Frame cycling: one tile changes at a time, in turn, with a slow crossfade
+let turn = 0;
+setInterval(() => {
+  if(reduced || $("#view-work").hidden || document.hidden) return;
+  const tiles = $$(".tile .frames").filter(f => f.querySelectorAll("img").length > 1);
+  if(!tiles.length) return;
+  const f = tiles[turn++ % tiles.length];
+  const imgs = f.querySelectorAll("img");
+  let cur = [...imgs].findIndex(im => im.classList.contains("on"));
+  imgs[cur].classList.remove("on");
+  imgs[(cur + 1) % imgs.length].classList.add("on");
+}, 1100);
+
+/* ---------- Project page ---------- */
+function renderProject(p){
+  const t = T[lang];
+  const i = PROJECTS.indexOf(p);
+  const prev = PROJECTS[(i-1+PROJECTS.length)%PROJECTS.length], next = PROJECTS[(i+1)%PROJECTS.length];
+  // Same justified rows as the homepage: up to three images per row, one shared height, widths by proportion
+  const n = perRow(), target = n === 3 ? 2.6 : n === 2 ? 1.7 : 0;
+  const fig = (idx, style) => `<figure style="${style}"><img loading="${idx<3?'eager':'lazy'}" src="${im(p.images[idx])}" alt="${esc(p.title)}, ${t.image} ${idx+1}"></figure>`;
+  const rowsOf = idxs => {
+    const rows = []; let row = [], sum = 0;
+    idxs.forEach(i => {
+      row.push(i); sum += AR[im(p.images[i])] || 1;
+      if(row.length === n || sum >= target){ rows.push(row); row = []; sum = 0; }
+    });
+    if(row.length) rows.push(row);
+    return rows.map(r => {
+      const sum = r.reduce((a,i) => a + (AR[im(p.images[i])] || 1), 0);
+      const full = n === 1 || r.length === n || sum >= target * 0.75;
+      return `<div class="grow">` + r.map(i => {
+        const ar = AR[im(p.images[i])] || 1;
+        return fig(i, full ? `flex:${ar} 1 0` : `flex:0 0 calc((100% - ${n-1} * var(--gap)) * ${ar / target})`);
+      }).join("") + `</div>`;
+    }).join("");
+  };
+  const gallery = p.sections
+    ? p.sections.map(s => `<h2 class="caption">${esc(s.h[lang])}</h2>` + rowsOf(s.imgs)).join("")
+    : rowsOf(p.images.map((_,k) => k));
+  const link = p.link ? `<p><a class="ext" href="${p.link.href}" target="_blank" rel="noopener">${esc(p.link.label[lang])} ↗</a></p>` : "";
+  const facts = [
+    p.client ? `<div><dt>${t.client}</dt><dd>${esc(p.client[lang])}</dd></div>` : "",
+    `<div><dt>${t.disciplines}</dt><dd class="tags">${p.cats.map(c=>`<span class="tag">${esc(catName(c))}</span>`).join("")}</dd></div>`
+  ].join("");
+  $("#view-project").innerHTML = `
+    <div class="band"><div class="wrap p-head">
+      <a class="back" href="#" data-go="">${t.back}</a>
+      <h1>${esc(p.title)}</h1>
+      <div class="p-intro">
+        <dl class="facts">${facts}</dl>
+        <div class="p-text">${p.text[lang].map(x=>`<p>${esc(x)}</p>`).join("")}${link}</div>
+      </div>
+    </div></div>
+    <div class="wrap"><div class="gallery" id="gallery">${gallery}</div></div>
+    <div class="wrap"><nav class="p-next" aria-label="${t.more}">
+      <a href="#${prev.slug}" data-go="${prev.slug}"><small>${t.prev}</small><b>${esc(prev.title)}</b></a>
+      <a href="#${next.slug}" data-go="${next.slug}"><small>${t.next}</small><b>${esc(next.title)}</b></a>
+    </nav></div>`;
+
+}
+
+/* ---------- Navigation ----------
+   Links are handled in script, so pages switch even where the address bar
+   can't change (previews, sandboxed viewers). The hash is updated when allowed. */
+const ALIAS = {"SLO":"slo","work":"","home":"","diensten":"services","fotografie":"photography"};
+const PHOTO_KEYS = [];
+function resolve(key){
+  key = decodeURIComponent(key || "");
+  if(key in ALIAS) key = ALIAS[key];
+  if(["","services","about","contact","photography","cv"].includes(key)) return key;
+  const p = PROJECTS.find(p => p.slug.toLowerCase() === key.toLowerCase());
+  return p ? p.slug : "";
+}
+function show(key, {scroll=true} = {}){
+  current = resolve(key);
+  const toPhotos = PHOTO_KEYS.includes(current);
+  if(toPhotos) current = "about";
+  const proj = PROJECTS.find(p => p.slug === current);
+  const v = proj ? "project" : (current || "work");
+  ["work","project","services","photography","about","cv","contact"].forEach(n => $("#view-"+n).hidden = n !== v);
+  if(proj) renderProject(proj);
+  const t = T[lang];
+  document.title = proj ? `${proj.title} — Rosalie Gubbels` : (v==="work" ? t.docTitle.work : `${t.docTitle[v]} — Rosalie Gubbels`);
+  const navKey = v==="project" ? "work" : v;
+  const parentKey = navKey;
+  $$("#nav a").forEach(a => (a.dataset.nav===navKey || a.dataset.nav===parentKey) ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current"));
+  if(toPhotos) { const el = $("#fotografie"); if(el) el.scrollIntoView(); }
+  else if(scroll) window.scrollTo(0,0);
+}
+function go(key){
+  show(key);
+  try{ history.pushState({key:current}, "", current ? "#"+current : location.pathname + location.search); }catch(e){}
+  if(typeof window.gtag === "function") gtag("event", "page_view", {page_title: document.title, page_location: location.href, page_path: location.pathname + location.hash});
+}
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-go]");
+  if(a && !e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0){ e.preventDefault(); go(a.dataset.go); return; }
+  const chip = e.target.closest(".chip");
+  if(chip){ activeCat = chip.dataset.cat; applyFilter(); return; }
+  const lb = e.target.closest(".lang button");
+  if(lb && lb.dataset.lang !== lang){
+    lang = lb.dataset.lang; store.set("rg-lang", lang);
+    renderChrome(); show(current, {scroll:false});
+    return;
+  }
+  const f = e.target.closest("#gallery figure, #photos figure, #cv");
+  if(f){
+    const box = f.id==="cv" ? f : (f.closest("#gallery, #photos") || f.parentElement);
+    const imgs = [...box.querySelectorAll("img")].map(i => i.src);
+    openLB(imgs, f.id==="cv" ? 0 : [...box.querySelectorAll("figure")].indexOf(f));
+  }
+});
+addEventListener("popstate", () => show(location.hash.slice(1)));
+addEventListener("hashchange", () => { if(resolve(location.hash.slice(1)) !== current) show(location.hash.slice(1)); });
+
+/* ---------- Lightbox ---------- */
+let lbList = [], lbIdx = 0;
+function openLB(list, i){ lbList = list; lbIdx = i; showLB(); $("#lb").hidden = false; document.body.style.overflow = "hidden"; $("#lbx").focus(); }
+function showLB(){ $("#lbi").src = lbList[lbIdx]; $("#lbc").textContent = `${lbIdx+1} / ${lbList.length}`; $("#lbp").hidden = $("#lbn").hidden = lbList.length < 2; }
+function closeLB(){ $("#lb").hidden = true; document.body.style.overflow = ""; }
+const step = d => { lbIdx = (lbIdx + d + lbList.length) % lbList.length; showLB(); };
+$("#lbx").onclick = closeLB; $("#lbp").onclick = () => step(-1); $("#lbn").onclick = () => step(1);
+$("#lb").addEventListener("click", e => { if(e.target.id === "lb") closeLB(); });
+addEventListener("keydown", e => {
+  if($("#lb").hidden) return;
+  if(e.key==="Escape") closeLB(); if(e.key==="ArrowLeft") step(-1); if(e.key==="ArrowRight") step(1);
+});
+
+
+function measure(){
+  document.documentElement.style.setProperty("--hdr", $("header.site").offsetHeight + "px");
+  document.documentElement.style.setProperty("--ftr", $("footer.site").offsetHeight + "px");
+}
+addEventListener("resize", measure);
+try{ document.fonts.ready.then(measure); }catch(e){}
+try{ const ro = new ResizeObserver(measure); ro.observe($("header.site")); ro.observe($("footer.site")); }catch(e){}
+renderChrome();
+show(location.hash.slice(1), {scroll:false});
+measure();
+</script>
+</body>
+</html>
