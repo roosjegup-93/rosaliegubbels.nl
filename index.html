@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="nl">
+<html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K93T27LK3V"></script>
@@ -244,6 +244,22 @@ footer a:hover{color:var(--ink)}
   .foot-nav{justify-content:center}
   footer .wrap{flex-direction:column;align-items:center;text-align:center}
 }
+/* Hamburger menu (phone only) */
+.burger{display:none;width:44px;height:44px;border:0;background:none;padding:10px;cursor:pointer;color:var(--header-ink);flex-direction:column;justify-content:center;gap:6px}
+.burger span{display:block;height:2px;width:24px;background:currentColor;border-radius:2px;transition:transform .25s, opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+@media (max-width:560px){
+  .bar{flex-direction:row!important;justify-content:space-between!important;flex-wrap:wrap;padding-block:14px;gap:0!important}
+  .burger{display:flex}
+  .right{display:none!important;width:100%;flex-direction:column;align-items:center;gap:22px!important;padding:18px 0 22px}
+  .bar.open .right{display:flex!important}
+  nav.main{flex-direction:column;align-items:center;gap:16px}
+  nav.main a{font-size:22px}
+  /* Projects centred on phone */
+  .row{justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -251,7 +267,8 @@ footer a:hover{color:var(--ink)}
 <header class="site">
   <div class="wrap bar">
     <a class="logo" href="#" data-go="">Rosalie Gubbels <span>Creative Design</span></a>
-    <div class="right">
+    <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <div class="right" id="menu">
       <nav class="main" id="nav" aria-label="Menu"></nav>
       <div class="lang" role="group" aria-label="Taal / Language">
         <button type="button" data-lang="nl">NL</button>
@@ -488,8 +505,8 @@ const store = {
   get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
   set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
 };
-let lang = store.get("rg-lang") || ((navigator.language||"").toLowerCase().startsWith("nl") ? "nl" : "en");
-if(!T[lang]) lang = "nl";
+let lang = store.get("rg-lang") || "en";
+if(!T[lang]) lang = "en";
 let current = "";          // current page key: "" (work), "about", "contact", "photography" or a project slug
 let activeCat = "All";
 $("#yr").textContent = new Date().getFullYear();
@@ -775,6 +792,15 @@ try{ const ro = new ResizeObserver(measure); ro.observe($("header.site")); ro.ob
 renderChrome();
 show(location.hash.slice(1), {scroll:false});
 measure();
+// Hamburger menu
+(function(){
+  const bar=document.querySelector("header.site .bar"), bt=document.getElementById("burger");
+  const set=o=>{bar.classList.toggle("open",o);bt.setAttribute("aria-expanded",o)};
+  bt.addEventListener("click",()=>set(!bar.classList.contains("open")));
+  document.getElementById("nav").addEventListener("click",e=>{if(e.target.closest("a"))set(false)});
+  document.querySelector("header.site .logo").addEventListener("click",()=>set(false));
+  addEventListener("resize",()=>{if(innerWidth>560)set(false)});
+})();
 </script>
 </body>
 </html>
